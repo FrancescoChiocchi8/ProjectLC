@@ -3,17 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="2d89f17d-d7e9-4e67-a275-94c5b8fa8428" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gedcom.g4" beforeDir="false" afterPath="$PROJECT_DIR$/Gedcom.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/Gedcom.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/Gedcom.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/GedcomBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/GedcomBaseVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/GedcomLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/GedcomLexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/GedcomLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/GedcomListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/GedcomParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gen/GedcomVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Gedcom3.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Gedcom3.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Gedcom3BaseListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Gedcom3BaseVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Gedcom3Lexer.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Gedcom3Lexer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Gedcom3Lexer.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Gedcom3Listener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Gedcom3Parser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Gedcom3Visitor.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/FamilyTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/FamilyTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +60,7 @@
       <recent name="C:\Users\fchio\Desktop\ProjectLC" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fchio\Desktop\ProjectLC\gen\it\unicam\cs\lc\lc2122\project" />
       <recent name="C:\Users\fchio\Desktop\ProjectLC" />
     </key>
   </component>

@@ -1,5 +1,4 @@
 package it.unicam.cs.lc.lc2122.project;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -11,7 +10,7 @@ import java.util.Set;
  * @author Template: Luca Tesei
  * //TODO extends it.unicam.cs.lc.lc2122.project.GedcomBaseListener
  */
-public class FamilyTree {
+public class FamilyTree extends it.unicam.cs.lc.lc2122.project.Gedcom3BaseVisitor {
     // mappa che contiene tutti gli individui presenti, recuperabili attraverso il
     // loro codice univoco.
     private Map<String, Individual> elements;
@@ -28,17 +27,17 @@ public class FamilyTree {
      *
      * @param code codice univoco dell'individuo da cercare
      * @return l'individuo con il codice indicato, altrimenti null se l'individuo
-     *         non Ã¨ presente
+     *         non è presente
      */
     public Individual getIndividual(String code) {
         return this.elements.get(code);
     }
 
     /**
-     * Determina se c'Ã¨ un certo individuo nell'albero genealogico
+     * Determina se c'è un certo individuo nell'albero genealogico
      *
      * @param i individuo da ricercare
-     * @return true se l'individuo passato Ã¨ presente nell'albero genealogico, false
+     * @return true se l'individuo passato è presente nell'albero genealogico, false
      *         altrimenti
      */
     public boolean isPresent(Individual i) {
@@ -46,10 +45,10 @@ public class FamilyTree {
     }
 
     /**
-     * Determina se c'Ã¨ un certo individuo nell'albero genealogico
+     * Determina se c'è un certo individuo nell'albero genealogico
      *
      * @param code il codice dell'individuo da ricercare
-     * @return true se l'individuo passato Ã¨ presente nell'albero genealogico, false
+     * @return true se l'individuo passato è presente nell'albero genealogico, false
      *         altrimenti
      */
     public boolean isPresent(String code) {
@@ -69,7 +68,7 @@ public class FamilyTree {
      * Aggiunge un individuo all'albero.
      *
      * @param newIndividual nuovo individuo da aggiungere
-     * @return true se l'individuo Ã¨ stato aggiunto, false se era giÃ  presente
+     * @return true se l'individuo è stato aggiunto, false se era già presente
      */
     public boolean addIndividual(Individual newIndividual) {
         if (this.elements.containsKey(newIndividual.getCode()))
@@ -84,7 +83,7 @@ public class FamilyTree {
      *
      * @param code il codice dell'individuo di partenza
      * @return l'insieme degli antenati dell'individuo di partenza
-     * @throws IllegalArgumentException se code non Ã¨ presente nell'albero
+     * @throws IllegalArgumentException se code non è presente nell'albero
      */
     public Set<String> getAncestorsOf(String code) {
         // TODO implementare
@@ -100,7 +99,7 @@ public class FamilyTree {
      *
      * @param code il codice dell'individuo di partenza
      * @return l'insieme dei discendenti dell'individuo di partenza
-     * @throws IllegalArgumentException se code non Ã¨ presente nell'albero
+     * @throws IllegalArgumentException se code non è presente nell'albero
      */
     public Set<String> getDescendantsOf(String code) {
 
