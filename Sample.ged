@@ -1,0 +1,54 @@
+0 HEAD
+1 GEDC
+2 VERS 5.5.5
+1 CHAR UTF-8
+1 DATE 2 Oct 2019
+2 TIME 0:00:00
+1 FILE Sample.ged
+1 LANG English
+0 @I1@ INDI
+1 NAME Robert Eugene /Williams/
+2 SURN Williams
+2 GIVN Robert Eugene
+1 SEX M
+1 BIRT
+2 DATE 2 Oct 1822
+2 PLAC Weston, Madison, Connecticut, United States of America
+1 DEAT
+2 DATE 14 Apr 1905
+2 PLAC Stamford, Fairfield, Connecticut, United States of America
+1 BURI
+2 PLAC Spring Hill Cemetery, Stamford, Fairfield, Connecticut, United States of America
+1 FAMS @F1@
+1 FAMS @F2@
+0 @I2@ INDI
+1 NAME Mary Ann /Wilson/
+2 SURN Wilson
+2 GIVN Mary Ann
+1 SEX F
+1 BIRT
+2 DATE BEF 1828
+2 PLAC Connecticut, United States of America
+1 FAMS @F1@
+0 @I3@ INDI
+1 NAME Joe /Williams/
+2 SURN Williams
+2 GIVN Joe
+1 SEX M
+1 BIRT
+2 DATE 11 Jun 1861
+2 PLAC Idaho Falls, Bonneville, Idaho, United States of America
+1 FAMC @F1@
+1 FAMC @F2@
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I3@
+1 MARR
+2 DATE Dec 1859
+2 PLAC Rapid City, Pennington, South Dakota, United States of America
+0 @F2@ FAM
+1 HUSB @I1@
+1 CHIL @I3@
+0 TRLR
+0 DESC @I1@
