@@ -9,9 +9,9 @@ import java.util.Set;
  * Rappresenta un albero genealogico semplificato.
  *
  * @author Template: Luca Tesei
- *
+ * //TODO extends it.unicam.cs.lc.lc2122.project.GedcomBaseListener
  */
-public class FamilyTree extends it.unicam.cs.lc.lc2122.project.GedcomBaseListener {
+public class FamilyTree {
     // mappa che contiene tutti gli individui presenti, recuperabili attraverso il
     // loro codice univoco.
     private Map<String, Individual> elements;

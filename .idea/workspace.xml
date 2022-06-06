@@ -2,20 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d89f17d-d7e9-4e67-a275-94c5b8fa8428" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/antlr_4_9_2_complete.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EsempioRossi.ged" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gedcom.g4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gedcom2.g4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectLC.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sample.ged" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/FamilyTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Individual.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gedcom.g4" beforeDir="false" afterPath="$PROJECT_DIR$/Gedcom.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Gedcom.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Gedcom.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/GedcomBaseListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/GedcomBaseVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/GedcomLexer.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/GedcomLexer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/GedcomLexer.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/GedcomListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/GedcomParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/GedcomVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/FamilyTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/FamilyTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,18 +43,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/fchio/Desktop/ProjectLC/EsempioRossi.ged",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.editor"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fchio/Desktop/ProjectLC/EsempioRossi.ged&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fchio\Desktop\ProjectLC\src\it\unicam\cs\lc\lc2122\project" />

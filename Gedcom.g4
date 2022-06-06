@@ -1,9 +1,5 @@
 grammar Gedcom;
 
-@header {
-	package it.unicam.cs.lc.lc2122.project;
-}
-
 gedcom: record+ ;
 
 /* Un record, in generale è formato da un livello, dato obbligatorio, da un header opzionale, da un codice di un individuo
