@@ -10,7 +10,7 @@ import java.util.Set;
  * @author Template: Luca Tesei
  * //TODO extends it.unicam.cs.lc.lc2122.project.GedcomBaseListener
  */
-public class FamilyTree extends it.unicam.cs.lc.lc2122.project.Gedcom3BaseVisitor {
+public class FamilyTree extends Gedcom3BaseVisitor<Individual> {
     // mappa che contiene tutti gli individui presenti, recuperabili attraverso il
     // loro codice univoco.
     private Map<String, Individual> elements;
@@ -88,6 +88,7 @@ public class FamilyTree extends it.unicam.cs.lc.lc2122.project.Gedcom3BaseVisito
     public Set<String> getAncestorsOf(String code) {
         // TODO implementare
         Set<String> s = new HashSet<>();
+
         if(!isPresent(code))
             throw new IllegalArgumentException("Il codice associato all'individuo non è presente");
         return null;
@@ -111,4 +112,13 @@ public class FamilyTree extends it.unicam.cs.lc.lc2122.project.Gedcom3BaseVisito
         return null;
     }
 
+    /*@Override
+    public Individual visitRecord(Gedcom3Parser.RecordContext ctx){
+        //if(visitLevel(Integer.valueOf(ctx.level().getText())) == 0)
+        TokenClass
+            String id = ctx..ID().getText();  // id is left-hand side of '='
+            Individual value = visit(ctx.expr());   // compute value of expression on right
+            elements.put(id, value);           // store it in our memory
+        return null;
+    }*/
 }
