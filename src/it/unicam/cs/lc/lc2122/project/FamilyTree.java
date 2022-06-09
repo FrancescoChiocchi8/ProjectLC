@@ -8,7 +8,6 @@ import java.util.Set;
  * Rappresenta un albero genealogico semplificato.
  *
  * @author Template: Luca Tesei
- * //TODO extends it.unicam.cs.lc.lc2122.project.GedcomBaseListener
  */
 public class FamilyTree extends GedcomBaseVisitor<Individual> {
     // mappa che contiene tutti gli individui presenti, recuperabili attraverso il
@@ -114,19 +113,20 @@ public class FamilyTree extends GedcomBaseVisitor<Individual> {
         return null;
     }
 
-    /*@Override
-    public Individual visitRecord(Gedcom3Parser.RecordContext ctx){
-        //if(visitLevel(Integer.valueOf(ctx.level().getText())) == 0)
-        TokenClass
-            String id = ctx..ID().getText();  // id is left-hand side of '='
-            Individual value = visit(ctx.expr());   // compute value of expression on right
-            elements.put(id, value);           // store it in our memory
-        return null;
-    }*/
+    /**
+     * Il metodo aggiunge alla mappa tutti i nuovi individui associandogli i codici letti nel file.
+     * @param ctx the parse tree.
+     * @return
+     */
     @Override
     public Individual visitRecord(GedcomParser.RecordContext ctx){
-
-
+        if(ctx.optCodeIndividual()!= null) {
+            String code = ctx.optCodeIndividual().getText();
+            if (Integer.valueOf(ctx.level().DIGIT().getText()) == 0 && code.startsWith("@I"))
+                elements.put(code, new Individual(code));
+            else if(Integer.valueOf(ctx.level().DIGIT().getText()) == 0 && code.startsWith("@F"))
+                System.out.println("ciao " + code);
+        }
         return null;
     }
 
@@ -136,26 +136,38 @@ public class FamilyTree extends GedcomBaseVisitor<Individual> {
             return visitChildren(ctx);}
         return null;
     }
+    /* metodi per scorrere elementi nella mappa
+    for(String code: getCodes())
+            System.out.println("Code " + code);*/
 
     /**
-     * Il metodo prende il codeString dell'ultimo record del file relativo a un individuo e lo mette nella mappa.
-     * @param ctx the parse tree
+     * Il metodo prende il codeString dell'ultimo record del file relativo a un individuo e richiama uno dei
+     * due metodi per cercare gli antenati o i discendenti per quell'individuo.
+     * @param ctx the parse tree.
      * @return l'individuo di cui si vogliono cercare gli antenati/discendenti.
-     * @NullPointerException il parse tree passato è null
+     * @NullPointerException il parse tree passato è null.
+     * @IllegalArgumentException il codice non è presente nella mappa o alla fine del file è presente un tag
+     * di richiesta non valido.
      */
     @Override public Individual visitRequest(GedcomParser.RequestContext ctx) {
         if(ctx == null)
-            throw new NullPointerException("Il parse tree è null");
-        String code = ctx.record_value().record_item(0).codeString().getText();
+            throw new NullPointerException("Il parse tree passato è null");
+        String code =ctx.record_value().record_item(0).getText();
         System.out.println("Last Code: " + code);
         Individual i = new Individual(code);
-        this.elements.put(code, i);
-        if(ctx.tag().getText().equals("ANCE"))
+        if(ctx.tag().getText().equals("ANCE") && isPresent(code))
             getAncestorsOf(code);
-        else if (ctx.tag().getText().equals("DISC"))
+        else if (ctx.tag().getText().equals("DISC") && isPresent(code))
             getDescendantsOf(code);
-        else
-            throw new IllegalArgumentException("Nel file è presente un tag di richiesta non valido");
+        else throw new IllegalArgumentException("Il codice non è presente nella mappa o alla" +
+                    " fine del file è presente un tag di richiesta non valido");
         return i;
     }
+
+    /* COSE UTILI
+    //String code = ctx.optCodeIndividual().codeString().getText();
+    //String code = ctx.record_value().record_item(0).codeString().getText();
+    //ctx.optCodeIndividual().codeString().getText().startsWith("@I")
+     */
+
 }
