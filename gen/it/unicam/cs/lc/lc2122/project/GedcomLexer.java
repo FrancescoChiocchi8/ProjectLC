@@ -1,6 +1,6 @@
-// Generated from C:/Users/fchio/Desktop/ProjectLC\Gedcom3.g4 by ANTLR 4.10.1
+// Generated from C:/Users/fchio/Desktop/ProjectLC\Gedcom.g4 by ANTLR 4.10.1
 
-	package it.unicam.cs.lc.lc2122.project;
+package it.unicam.cs.lc.lc2122.project;
 
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
@@ -12,7 +12,7 @@ import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class Gedcom3Lexer extends Lexer {
+public class GedcomLexer extends Lexer {
 	static { RuntimeMetaData.checkVersion("4.10.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -83,13 +83,13 @@ public class Gedcom3Lexer extends Lexer {
 	}
 
 
-	public Gedcom3Lexer(CharStream input) {
+	public GedcomLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Gedcom3.g4"; }
+	public String getGrammarFileName() { return "Gedcom.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -117,7 +117,7 @@ public class Gedcom3Lexer extends Lexer {
 		"\f\u0007)\u0001\b\u0004\b-\b\b\u000b\b\f\b.\u0001\t\u0001\t\u0001\t\u0001"+
 		"\t\u0000\u0000\n\u0001\u0001\u0003\u0002\u0005\u0003\u0007\u0004\t\u0005"+
 		"\u000b\u0006\r\u0007\u000f\b\u0011\t\u0013\n\u0001\u0000\u0004\u0002\u0000"+
-		"AZaz\u0001\u000009\u0002\u0000\n\n\r\r\u0002\u0000\t\t  6\u0000\u0001"+
+		"AZaz\u0001\u000009\u0002\u0000\n\n\r\r\u0003\u0000\t\n\r\r  6\u0000\u0001"+
 		"\u0001\u0000\u0000\u0000\u0000\u0003\u0001\u0000\u0000\u0000\u0000\u0005"+
 		"\u0001\u0000\u0000\u0000\u0000\u0007\u0001\u0000\u0000\u0000\u0000\t\u0001"+
 		"\u0000\u0000\u0000\u0000\u000b\u0001\u0000\u0000\u0000\u0000\r\u0001\u0000"+

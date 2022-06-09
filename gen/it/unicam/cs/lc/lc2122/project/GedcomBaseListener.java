@@ -1,6 +1,6 @@
-// Generated from C:/Users/fchio/Desktop/ProjectLC\Gedcom3.g4 by ANTLR 4.10.1
+// Generated from C:/Users/fchio/Desktop/ProjectLC\Gedcom.g4 by ANTLR 4.10.1
 
-	package it.unicam.cs.lc.lc2122.project;
+package it.unicam.cs.lc.lc2122.project;
 
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -8,143 +8,155 @@ import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
- * This class provides an empty implementation of {@link Gedcom3Listener},
+ * This class provides an empty implementation of {@link GedcomListener},
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-public class Gedcom3BaseListener implements Gedcom3Listener {
+public class GedcomBaseListener implements GedcomListener {
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterGedcom(Gedcom3Parser.GedcomContext ctx) { }
+	@Override public void enterGedcom(GedcomParser.GedcomContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitGedcom(Gedcom3Parser.GedcomContext ctx) { }
+	@Override public void exitGedcom(GedcomParser.GedcomContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRecord(Gedcom3Parser.RecordContext ctx) { }
+	@Override public void enterRecord(GedcomParser.RecordContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRecord(Gedcom3Parser.RecordContext ctx) { }
+	@Override public void exitRecord(GedcomParser.RecordContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLevel(Gedcom3Parser.LevelContext ctx) { }
+	@Override public void enterLevel(GedcomParser.LevelContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLevel(Gedcom3Parser.LevelContext ctx) { }
+	@Override public void exitLevel(GedcomParser.LevelContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOptCodeIndividual(Gedcom3Parser.OptCodeIndividualContext ctx) { }
+	@Override public void enterOptCodeIndividual(GedcomParser.OptCodeIndividualContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOptCodeIndividual(Gedcom3Parser.OptCodeIndividualContext ctx) { }
+	@Override public void exitOptCodeIndividual(GedcomParser.OptCodeIndividualContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTag(Gedcom3Parser.TagContext ctx) { }
+	@Override public void enterTag(GedcomParser.TagContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTag(Gedcom3Parser.TagContext ctx) { }
+	@Override public void exitTag(GedcomParser.TagContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRecord_value(Gedcom3Parser.Record_valueContext ctx) { }
+	@Override public void enterRecord_value(GedcomParser.Record_valueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRecord_value(Gedcom3Parser.Record_valueContext ctx) { }
+	@Override public void exitRecord_value(GedcomParser.Record_valueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRecord_item(Gedcom3Parser.Record_itemContext ctx) { }
+	@Override public void enterRequest(GedcomParser.RequestContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRecord_item(Gedcom3Parser.Record_itemContext ctx) { }
+	@Override public void exitRequest(GedcomParser.RequestContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCodeString(Gedcom3Parser.CodeStringContext ctx) { }
+	@Override public void enterRecord_item(GedcomParser.Record_itemContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCodeString(Gedcom3Parser.CodeStringContext ctx) { }
+	@Override public void exitRecord_item(GedcomParser.Record_itemContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPointer(Gedcom3Parser.PointerContext ctx) { }
+	@Override public void enterCodeString(GedcomParser.CodeStringContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPointer(Gedcom3Parser.PointerContext ctx) { }
+	@Override public void exitCodeString(GedcomParser.CodeStringContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAnystring(Gedcom3Parser.AnystringContext ctx) { }
+	@Override public void enterPointer(GedcomParser.PointerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAnystring(Gedcom3Parser.AnystringContext ctx) { }
+	@Override public void exitPointer(GedcomParser.PointerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSpecialChar(Gedcom3Parser.SpecialCharContext ctx) { }
+	@Override public void enterAnystring(GedcomParser.AnystringContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSpecialChar(Gedcom3Parser.SpecialCharContext ctx) { }
+	@Override public void exitAnystring(GedcomParser.AnystringContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSpecialChar(GedcomParser.SpecialCharContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSpecialChar(GedcomParser.SpecialCharContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

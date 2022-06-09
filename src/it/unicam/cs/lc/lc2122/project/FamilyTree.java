@@ -10,7 +10,7 @@ import java.util.Set;
  * @author Template: Luca Tesei
  * //TODO extends it.unicam.cs.lc.lc2122.project.GedcomBaseListener
  */
-public class FamilyTree extends Gedcom3BaseVisitor<Individual> {
+public class FamilyTree extends GedcomBaseVisitor<Individual> {
     // mappa che contiene tutti gli individui presenti, recuperabili attraverso il
     // loro codice univoco.
     private Map<String, Individual> elements;
@@ -89,6 +89,7 @@ public class FamilyTree extends Gedcom3BaseVisitor<Individual> {
         // TODO implementare
         Set<String> s = new HashSet<>();
 
+        System.out.println("sono negli antenati");
         if(!isPresent(code))
             throw new IllegalArgumentException("Il codice associato all'individuo non è presente");
         return null;
@@ -106,6 +107,7 @@ public class FamilyTree extends Gedcom3BaseVisitor<Individual> {
 
         // TODO implementare
         Set<String> s = new HashSet<>();
+        System.out.println("sono nei discendenti");
 
         if(!isPresent(code))
             throw new IllegalArgumentException("Il codice associato all'individuo non è presente");
@@ -121,4 +123,39 @@ public class FamilyTree extends Gedcom3BaseVisitor<Individual> {
             elements.put(id, value);           // store it in our memory
         return null;
     }*/
+    @Override
+    public Individual visitRecord(GedcomParser.RecordContext ctx){
+
+
+        return null;
+    }
+
+    @Override public Individual visitLevel(GedcomParser.LevelContext ctx) {
+        if(Integer.valueOf(ctx.getText()) == 0) {
+            System.out.println("ciao");
+            return visitChildren(ctx);}
+        return null;
+    }
+
+    /**
+     * Il metodo prende il codeString dell'ultimo record del file relativo a un individuo e lo mette nella mappa.
+     * @param ctx the parse tree
+     * @return l'individuo di cui si vogliono cercare gli antenati/discendenti.
+     * @NullPointerException il parse tree passato è null
+     */
+    @Override public Individual visitRequest(GedcomParser.RequestContext ctx) {
+        if(ctx == null)
+            throw new NullPointerException("Il parse tree è null");
+        String code = ctx.record_value().record_item(0).codeString().getText();
+        System.out.println("Last Code: " + code);
+        Individual i = new Individual(code);
+        this.elements.put(code, i);
+        if(ctx.tag().getText().equals("ANCE"))
+            getAncestorsOf(code);
+        else if (ctx.tag().getText().equals("DISC"))
+            getDescendantsOf(code);
+        else
+            throw new IllegalArgumentException("Nel file è presente un tag di richiesta non valido");
+        return i;
+    }
 }

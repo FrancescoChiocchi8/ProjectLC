@@ -1,47 +1,55 @@
 grammar Gedcom;
 
-gedcom: record+ ;
+@header {
+package it.unicam.cs.lc.lc2122.project;
+}
 
-/* Un record, in generale è formato da un livello, dato obbligatorio, da un header opzionale, da un codice di un individuo
- * opzionale se il livello è 0, da un tag obbligatorio e da un valore riferito al tag, anch'esso opzionale.
+// Un file in formato Gedcom è un insieme di record e da una richiesta di visita di un record
+gedcom: record+ request EOF;
+
+/*
+ * Un record è la composizione dei valori livello, dato obbligatorio, codice dell'individuo opzionale, tag obbligatorio
+ * e il valore del record opzionale. Infine è presente la richiesta di ricerca degli antenati/discendenti dell'individuo.
  */
-record: level tag? code_individual? record_value? RN ;
+record: level optCodeIndividual? tag record_value? EOL;
 
-level: LEVEL
-    | DIGIT;
+level: DIGIT;
 
-code_individual: code;
-
-code: '@' ('I'|'F') DIGIT '@' WORD;
+optCodeIndividual: '@' codeString '@';
 
 tag: WORD;
 
 record_value: record_item+;
 
-record_item: code
+request: level tag record_value EOL;
+
+record_item: '@' codeString '@'
    | anystring
    ;
 
-anystring: anychar+;
+codeString: pointer+;
 
-anychar: WORDS
+pointer: WORD
    | DIGIT
-   | special_char
+   | specialChar
    ;
 
-special_char:  ','
-   | '.'
-   | ':'
-   | '/'
-   | '-'
+anystring: WORD
+   | DIGIT
+   | specialChar
    ;
 
+WORD: [a-zA-Z]+;
 
 DIGIT: [0-9]+;
-LEVEL: [0-3];
 
-WORD: [A-Z]+;
-WORDS: [a-zA-Z]+;
-RN: [\r\n]+;
-WS: [ \t] -> skip;
-//ID:	[a-zA-Z][a-zA-Z0-9]* ;
+specialChar: '-'
+   | ','
+   | '.'
+   | '/'
+   | ':'
+   ;
+
+EOL: [\r\n]+;
+
+WS: [ \n\r\t] -> skip;
