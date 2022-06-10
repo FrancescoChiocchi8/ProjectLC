@@ -15,10 +15,13 @@ public class Main {
         ParseTree tree = parser.gedcom(); // parse; start at prog <label id="code.tour.main.6"/>
         System.out.println(tree.toStringTree(parser));
         //System.out.println(tree.toStringTree());
-        //System.out.println(tree.getChild(3));
 
         FamilyTree f = new FamilyTree();
         f.visit(tree);
+        //prendo il codice dell'ultimo record da cercare
+        Individual i = f.getIndividual(f.getRequestCode());
+        System.out.println("Individuo di cui ricercare gli antenati/discendenti: "+i.getCode());
+        f.getAncestorsOf(i.getCode());
     }
 
 }

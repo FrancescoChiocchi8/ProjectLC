@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2d89f17d-d7e9-4e67-a275-94c5b8fa8428" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/FamilyTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/FamilyTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Individual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Individual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +49,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\fchio\Desktop\ProjectLC\src\it\unicam\cs\lc\lc2122\project" />
       <recent name="C:\Users\fchio\Desktop\ProjectLC" />
+      <recent name="C:\Users\fchio\Desktop\ProjectLC\src\it\unicam\cs\lc\lc2122\project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\fchio\Desktop\ProjectLC" />

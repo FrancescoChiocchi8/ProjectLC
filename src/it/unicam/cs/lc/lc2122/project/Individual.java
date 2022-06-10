@@ -9,7 +9,7 @@ import java.util.Objects;
  * Rappresenta un individuo in un albero genealogico.
  *
  * @author Template: Luca Tesei
- *
+ * @author Francesco Chiocchi
  */
 public class Individual {
     // Codice univoco

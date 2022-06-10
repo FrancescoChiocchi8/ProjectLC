@@ -1,19 +1,21 @@
 package it.unicam.cs.lc.lc2122.project;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Rappresenta un albero genealogico semplificato.
  *
  * @author Template: Luca Tesei
+ * @author Francesco Chiocchi
  */
 public class FamilyTree extends GedcomBaseVisitor<Individual> {
     // mappa che contiene tutti gli individui presenti, recuperabili attraverso il
     // loro codice univoco.
     private Map<String, Individual> elements;
 
+
+
+    //Può non servire
+    private String requestCode;
     /**
      * Costruisce un albero genealogico semplificato vuoto.
      */
@@ -86,12 +88,13 @@ public class FamilyTree extends GedcomBaseVisitor<Individual> {
      */
     public Set<String> getAncestorsOf(String code) {
         // TODO implementare
-        Set<String> s = new HashSet<>();
-
-        System.out.println("sono negli antenati");
         if(!isPresent(code))
             throw new IllegalArgumentException("Il codice associato all'individuo non è presente");
-        return null;
+        Set<String> s = new HashSet<>();
+        s.add(code);
+        System.out.println("sono negli antenati");
+
+        return s;
     }
 
     /**
@@ -103,71 +106,131 @@ public class FamilyTree extends GedcomBaseVisitor<Individual> {
      * @throws IllegalArgumentException se code non è presente nell'albero
      */
     public Set<String> getDescendantsOf(String code) {
-
         // TODO implementare
-        Set<String> s = new HashSet<>();
-        System.out.println("sono nei discendenti");
-
         if(!isPresent(code))
             throw new IllegalArgumentException("Il codice associato all'individuo non è presente");
-        return null;
+        Set<String> s = new HashSet<>();
+        s.add(code);
+        System.out.println("sono nei discendenti");
+
+        return s;
+    }
+
+    /**
+     * Metodo accessorio che restituisce l'ultimo codice del file gedcom relativo a un individuo.
+     * @return l'ultimo codice del file gedcom relativo a un individuo.
+     */
+    public String getRequestCode(){
+        return this.requestCode;
+    }
+
+    @Override public Individual visitGedcom(GedcomParser.GedcomContext ctx) {
+        List<GedcomParser.RecordContext> l = ctx.record();
+        Individual lastIndividual = null;
+        for(GedcomParser.RecordContext r : l){
+            if(Integer.valueOf(r.level().getText()).equals(0) && r.tag().getText().equals("INDI")){
+                String code = '@' + r.optCodeIndividual().codeString().getText() + '@';
+                Individual i = new Individual(code);
+                addIndividual(i); lastIndividual = i;
+                System.out.println("Last Individual.code "+ lastIndividual.getCode());
+            }
+            if((Integer.valueOf(r.level().getText()).equals(1) && r.tag().getText().equals("FAMS"))) {
+                String f = '@'+ r.record_value().record_item(0).codeString().getText() +'@';
+                System.out.println("FamigliaSposi.code: "+f);
+            }
+            //forse è meglio fare un metodo setCaratteristiche(GedcomParser.GedcomContext ctx)
+            if((Integer.valueOf(r.level().getText()).equals(2) && r.tag().getText().equals("GIVN"))) {
+                lastIndividual.setGivenName(r.record_value().record_item(0).anystring().getText());
+                System.out.println(lastIndividual.getGivenName());
+            }
+            if((Integer.valueOf(r.level().getText()).equals(1) && r.tag().getText().equals("FAMC"))) {
+                String f = '@'+ r.record_value().record_item(0).codeString().getText() +'@';
+                //lastIndividual
+                System.out.println("FamigliaFiglio.code: "+f);
+            }
+        }
+        return visitChildren(ctx);
+    }
+
+    /**
+     * Il metodo controlla se il codice opzionale di un individuo o di una famiglia sia valido. Per esserlo deve cominciare
+     * o per "@I" o per "@F".
+     * @param ctx the parse tree.
+     * @return visita del nodo figlio.
+     * @IllegalArgumentException se nel file è presente un tipo di codice non gestito.
+     */
+    @Override public Individual visitOptCodeIndividual(GedcomParser.OptCodeIndividualContext ctx) {
+        String s = '@' + ctx.codeString().getText() + '@';
+        if(!s.startsWith("@I") && !s.startsWith("@F"))
+            throw new IllegalArgumentException("Tipo di codice opzionale non gestito");
+        return visitChildren(ctx);
     }
 
     /**
      * Il metodo aggiunge alla mappa tutti i nuovi individui associandogli i codici letti nel file.
      * @param ctx the parse tree.
-     * @return
+     * @return visita del nodo figlio.
      */
     @Override
     public Individual visitRecord(GedcomParser.RecordContext ctx){
-        if(ctx.optCodeIndividual()!= null) {
-            String code = ctx.optCodeIndividual().getText();
-            if (Integer.valueOf(ctx.level().DIGIT().getText()) == 0 && code.startsWith("@I"))
-                elements.put(code, new Individual(code));
-            else if(Integer.valueOf(ctx.level().DIGIT().getText()) == 0 && code.startsWith("@F"))
-                System.out.println("ciao " + code);
+        if(ctx.optCodeIndividual() != null && ctx.optCodeIndividual().codeString().getText().startsWith("@I")) {
+            String code = '@'+ctx.optCodeIndividual().codeString().getText()+'@';
+            System.out.println("c: "+ code);
         }
-        return null;
+        else if(ctx.optCodeIndividual() != null && ctx.optCodeIndividual().codeString().getText().startsWith("@F")) {
+            String code = '@'+ctx.optCodeIndividual().codeString().getText()+'@';
+            System.out.println("f: "+ code);
+        }
+        return visitChildren(ctx);
     }
 
-    @Override public Individual visitLevel(GedcomParser.LevelContext ctx) {
-        if(Integer.valueOf(ctx.getText()) == 0) {
-            System.out.println("ciao");
-            return visitChildren(ctx);}
-        return null;
+    @Override
+    public Individual visitLevel(GedcomParser.LevelContext ctx) {
+        int i = Integer.valueOf(ctx.DIGIT().getText());
+        if(i < 0 || i > 2)
+            throw new IllegalArgumentException("Tipi di livelli non gestiti dalla grammatica");
+        return visitChildren(ctx);
     }
     /* metodi per scorrere elementi nella mappa
     for(String code: getCodes())
             System.out.println("Code " + code);*/
 
+    @Override
+    public Individual visitTag(GedcomParser.TagContext ctx) {
+        return visitChildren(ctx);
+    }
+
     /**
      * Il metodo prende il codeString dell'ultimo record del file relativo a un individuo e richiama uno dei
      * due metodi per cercare gli antenati o i discendenti per quell'individuo.
      * @param ctx the parse tree.
-     * @return l'individuo di cui si vogliono cercare gli antenati/discendenti.
+     * @return visita del nodo figlio.
      * @NullPointerException il parse tree passato è null.
      * @IllegalArgumentException il codice non è presente nella mappa o alla fine del file è presente un tag
      * di richiesta non valido.
      */
     @Override public Individual visitRequest(GedcomParser.RequestContext ctx) {
+        for(Individual i : elements.values()){
+            System.out.println("Nome: "+ i.getGivenName());
+        }
         if(ctx == null)
             throw new NullPointerException("Il parse tree passato è null");
-        String code =ctx.record_value().record_item(0).getText();
-        System.out.println("Last Code: " + code);
-        Individual i = new Individual(code);
-        if(ctx.tag().getText().equals("ANCE") && isPresent(code))
-            getAncestorsOf(code);
-        else if (ctx.tag().getText().equals("DISC") && isPresent(code))
-            getDescendantsOf(code);
+        String code = ctx.record_value().record_item(0).getText();
+        this.requestCode = code;
+        if(ctx.tag().getText().equals("ANCE") && isPresent(code)) getAncestorsOf(code);
+        else if (ctx.tag().getText().equals("DISC") && isPresent(code)) getDescendantsOf(code);
         else throw new IllegalArgumentException("Il codice non è presente nella mappa o alla" +
                     " fine del file è presente un tag di richiesta non valido");
-        return i;
+        return visitChildren(ctx);
     }
 
     /* COSE UTILI
     //String code = ctx.optCodeIndividual().codeString().getText();
     //String code = ctx.record_value().record_item(0).codeString().getText();
     //ctx.optCodeIndividual().codeString().getText().startsWith("@I")
+    map.entrySet().forEach(entry->{
+			System.out.println(entry.getKey() + " = " + entry.getValue());
+		});
      */
 
 }
