@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2d89f17d-d7e9-4e67-a275-94c5b8fa8428" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gedcom3.g4" beforeDir="false" afterPath="$PROJECT_DIR$/Gedcom3.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/AFamily.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/FamilyTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/FamilyTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Individual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Individual.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Main.java" afterDir="false" />
@@ -44,7 +45,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propCompiler"
+    "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -58,7 +59,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="it.unicam.cs.lc.lc2122.project.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.unicam.cs.lc.lc2122.project.Main" />
       <module name="ProjectLC" />
       <extension name="coverage">
@@ -73,7 +74,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.it.unicam.cs.lc.lc2122.project.Main" />
       </list>
     </recent_temporary>
   </component>

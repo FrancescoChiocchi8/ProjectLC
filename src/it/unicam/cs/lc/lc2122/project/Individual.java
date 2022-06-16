@@ -9,7 +9,7 @@ import java.util.Objects;
  * Rappresenta un individuo in un albero genealogico.
  *
  * @author Template: Luca Tesei
- * @author Francesco Chiocchi
+ *
  */
 public class Individual {
     // Codice univoco
@@ -172,6 +172,7 @@ public class Individual {
      */
     public Individual getMother() {
         return mother;
+
     }
 
     /**
@@ -204,12 +205,42 @@ public class Individual {
         Individual other = (Individual) obj;
         return Objects.equals(code, other.code);
     }
-
     @Override
+    public String toString() {
+        if(this.father != null && mother!= null )
+        return "Individual{" +
+                "code='" + code + '\'' +
+                ", givenName='" + givenName + '\'' +
+                ", surname='" + surname + '\'' +
+                //", birthDate=" + birthDate +
+                ", birthPlace='" + birthPlace + '\'' +
+                ", deathDate=" + deathDate +
+                ", deathPlace='" + deathPlace + '\'' +
+                ", buryPlace='" + buryPlace + '\'' +
+                ", childs=" + childs.toString() +
+                ", father=" + father.getCode() +
+                ", mother=" + mother.getCode() +
+                '}';
+        else return "Individual{" +
+                "code='" + code + '\'' +
+                ", givenName='" + givenName + '\'' +
+                ", surname='" + surname + '\'' +
+                //", birthDate=" + birthDate +
+                ", birthPlace='" + birthPlace + '\'' +
+                ", deathDate=" + deathDate +
+                ", deathPlace='" + deathPlace + '\'' +
+                ", buryPlace='" + buryPlace + '\'' +
+                ", childs=" + childs +
+                ", father=" + father +
+                ", mother=" + mother +
+                '}';
+    }
+
+    /*@Override
     public String toString() {
         // TODO reimplementare facendo una stringa formattata solo con le informazioni
         // effettivamente disponibili
         return "";
-    }
+    }*/
 
 }
