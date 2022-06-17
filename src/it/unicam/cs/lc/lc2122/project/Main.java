@@ -17,13 +17,5 @@ public class Main {
         System.out.println(tree.toStringTree(parser));
         GedcomBaseListener2 gedcomBaseListener2 = new GedcomBaseListener2();
         walker.walk(gedcomBaseListener2, tree);
-
-       /// String s = tree.getRequestCode();
-        //System.out.println("Individuo di cui ricercare gli antenati/discendenti: " + s);
-        //GedcomBaseListener gedcomBaseListener = new GedcomBaseListener2();
-        //GedcomBaseVisitor2 g = new GedcomBaseVisitor2();
-        //g.visit(tree);
-        //prendo il codice della richiesta di calcolo degli ascendenti/discendenti dell'ultimo individuo nel file .ged
     }
-
 }

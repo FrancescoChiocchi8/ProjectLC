@@ -13,7 +13,12 @@ public class FamilyTree {
     // loro codice univoco.
     private Map<String, Individual> elements;
 
+    // mappa che contiene tutte le famiglie presenti, recuperabili attraverso il
+    // loro codice univoco.
     private Map<String, AFamily> families;
+
+    //Insieme di codici dopo il calcolo degli antenati/discendenti
+    private Set<String> code;
 
     /**
      * Costruisce un albero genealogico semplificato vuoto.
@@ -21,6 +26,7 @@ public class FamilyTree {
     public FamilyTree() {
         this.elements = new HashMap<String, Individual>();
         this.families = new HashMap<String, AFamily>();
+        this.code = new HashSet<>();
     }
 
     /**
@@ -65,10 +71,6 @@ public class FamilyTree {
         return this.elements.keySet();
     }
 
-    public Set<String> getCodesFamily(){
-        return this.families.keySet();
-    }
-
     /**
      * Aggiunge un individuo all'albero.
      *
@@ -80,13 +82,6 @@ public class FamilyTree {
             return false;
         this.elements.put(newIndividual.getCode(), newIndividual);
         return true;
-    }
-
-    public AFamily getFamily(String codeFamily){
-        if(families.containsKey(codeFamily)){
-            return families.get(codeFamily);
-        }
-        return null;
     }
 
     public boolean addFamily(AFamily aFamily) {
@@ -105,7 +100,6 @@ public class FamilyTree {
      * @throws IllegalArgumentException se code non è presente nell'albero
      */
     public Set<String> getAncestorsOf(String code) {
-        // TODO implementare
         if(!isPresent(code))
             throw new IllegalArgumentException("Il codice associato all'individuo non è presente");
         Set<String> s = new HashSet<>();
@@ -115,9 +109,7 @@ public class FamilyTree {
             s.addAll(this.getAncestorsOf(i0.getFather().getCode()));
         if (i0.getMother() != null)
             s.addAll(this.getAncestorsOf(i0.getMother().getCode()));
-        System.out.println("sono negli antenati");
-        for(String string : s)
-            System.out.println("Antenati di "+ i0.getCode() + " " + string);
+        this.code = s;
         return s;
     }
 
@@ -130,7 +122,6 @@ public class FamilyTree {
      * @throws IllegalArgumentException se code non è presente nell'albero
      */
     public Set<String> getDescendantsOf(String code) {
-        // TODO implementare
         if(!isPresent(code))
             throw new IllegalArgumentException("Il codice associato all'individuo non è presente");
         Set<String> s = new HashSet<>();
@@ -139,33 +130,17 @@ public class FamilyTree {
         for (Individual i : i0.getChilds()) {
             s.addAll(this.getDescendantsOf(i.getCode()));
         }
-        for(String string : s)
-            System.out.println("Discendenti di "+ i0.getCode() + " " + string);
-        System.out.println("sono nei discendenti");
-        getAll();
+        this.code = s;
         return s;
     }
 
-    public AFamily getFamily(AFamily codeFamily){
-        if(families.containsKey(codeFamily))
-            return families.get(codeFamily);
-        return null;
-    }
-
-    public void getAll(){
-        for(Individual i : elements.values()){
-            //System.out.println("Nome: "+ i.getGivenName() + "Cognome: "+ i.getSurname());
-            System.out.println(i.toString());
-        }
-        /*for(String code: families.keySet())
-            System.out.println("CodeFamily: " + code);*/
-    }
-
-
-    /* COSE UTILI
-    map.entrySet().forEach(entry->{
-			System.out.println(entry.getKey() + " = " + entry.getValue());
-		});
+    /**
+     * Metodo che serve per stampare a schermo tutti gli antenati/discendenti dopo la chiusura della grammatica Gedcom
      */
-
+    public void getCode() {
+        for (String code : code) {
+            System.out.println("\u001B[0m" + "Individuo: " + code);
+            System.out.println(getIndividual(code).toString());
+        }
+    }
 }

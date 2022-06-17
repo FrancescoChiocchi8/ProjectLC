@@ -212,12 +212,12 @@ public class Individual {
                 "code='" + code + '\'' +
                 ", givenName='" + givenName + '\'' +
                 ", surname='" + surname + '\'' +
-                //", birthDate=" + birthDate +
+                ", birthDate=" + birthDate +
                 ", birthPlace='" + birthPlace + '\'' +
                 ", deathDate=" + deathDate +
                 ", deathPlace='" + deathPlace + '\'' +
                 ", buryPlace='" + buryPlace + '\'' +
-                ", childs=" + childs.toString() +
+                //", childs=" + childs.toString() +
                 ", father=" + father.getCode() +
                 ", mother=" + mother.getCode() +
                 '}';
@@ -225,12 +225,12 @@ public class Individual {
                 "code='" + code + '\'' +
                 ", givenName='" + givenName + '\'' +
                 ", surname='" + surname + '\'' +
-                //", birthDate=" + birthDate +
+                ", birthDate=" + birthDate +
                 ", birthPlace='" + birthPlace + '\'' +
                 ", deathDate=" + deathDate +
                 ", deathPlace='" + deathPlace + '\'' +
                 ", buryPlace='" + buryPlace + '\'' +
-                ", childs=" + childs +
+                //", childs=" + childs +
                 ", father=" + father +
                 ", mother=" + mother +
                 '}';

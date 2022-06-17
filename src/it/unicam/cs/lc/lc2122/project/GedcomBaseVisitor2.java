@@ -158,9 +158,6 @@ public class GedcomBaseVisitor2 extends GedcomBaseVisitor<Individual>{
             throw new IllegalArgumentException("Tipi di livelli non gestiti dalla grammatica");
         return visitChildren(ctx);
     }
-    /* metodi per scorrere elementi nella mappa
-    for(String code: getCodes())
-            System.out.println("Code " + code);*/
 
     @Override
     public Individual visitTag(GedcomParser.TagContext ctx) {
