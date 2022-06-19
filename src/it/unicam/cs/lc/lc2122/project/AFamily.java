@@ -1,5 +1,8 @@
 package it.unicam.cs.lc.lc2122.project;
 
+/**
+ * Classe che rappresenta una famiglia.
+ */
 public class AFamily {
 
     private final String codeFamily;

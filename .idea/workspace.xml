@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2d89f17d-d7e9-4e67-a275-94c5b8fa8428" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gedcom2.g4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/AFamily.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/AFamily.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/FamilyTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/FamilyTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/GedcomBaseListener2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/GedcomBaseListener2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/GedcomBaseVisitor2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/GedcomBaseVisitor2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/GedcomBaseVisitor2.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Individual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Individual.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Main.java" afterDir="false" />
     </list>

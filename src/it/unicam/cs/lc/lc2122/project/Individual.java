@@ -1,9 +1,6 @@
 package it.unicam.cs.lc.lc2122.project;
 
-import java.util.ArrayList;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Rappresenta un individuo in un albero genealogico.
@@ -172,7 +169,6 @@ public class Individual {
      */
     public Individual getMother() {
         return mother;
-
     }
 
     /**
@@ -205,42 +201,46 @@ public class Individual {
         Individual other = (Individual) obj;
         return Objects.equals(code, other.code);
     }
+
+    /**
+     * Restituisce i figli e le loro corrispondenti caratteristiche.
+     * @return la stringa contenente le caratteristiche dei figli.
+     */
+    private String printChilds(){
+        if(childs.isEmpty())
+            return null;
+        String childsString = Arrays.toString(childs.toArray());
+        return childsString;
+    }
+
     @Override
     public String toString() {
         if(this.father != null && mother!= null )
         return "Individual{" +
                 "code='" + code + '\'' +
-                ", givenName='" + givenName + '\'' +
-                ", surname='" + surname + '\'' +
-                ", birthDate=" + birthDate +
-                ", birthPlace='" + birthPlace + '\'' +
-                ", deathDate=" + deathDate +
-                ", deathPlace='" + deathPlace + '\'' +
-                ", buryPlace='" + buryPlace + '\'' +
-                //", childs=" + childs.toString() +
+                ", givenName='" + getGivenName() + '\'' +
+                ", surname='" + getSurname() + '\'' +
+                //", birthDate=" + birthDate +
+                ", birthPlace='" + getBirthPlace() + '\'' +
+                //", deathDate=" + deathDate +
+                ", deathPlace='" + getDeathPlace() + '\'' +
+                ", buryPlace='" + getBuryPlace() + '\'' +
+                ", childs=" + printChilds() +
                 ", father=" + father.getCode() +
                 ", mother=" + mother.getCode() +
                 '}';
         else return "Individual{" +
                 "code='" + code + '\'' +
-                ", givenName='" + givenName + '\'' +
-                ", surname='" + surname + '\'' +
-                ", birthDate=" + birthDate +
-                ", birthPlace='" + birthPlace + '\'' +
-                ", deathDate=" + deathDate +
-                ", deathPlace='" + deathPlace + '\'' +
-                ", buryPlace='" + buryPlace + '\'' +
-                //", childs=" + childs +
+                ", givenName='" + getGivenName() + '\'' +
+                ", surname='" + getSurname() + '\'' +
+                //", birthDate=" + birthDate +
+                ", birthPlace='" + getBirthPlace() + '\'' +
+                //", deathDate=" + deathDate +
+                ", deathPlace='" + getDeathPlace() + '\'' +
+                ", buryPlace='" + getBuryPlace() + '\'' +
+                ", childs=" + printChilds() +
                 ", father=" + father +
                 ", mother=" + mother +
                 '}';
     }
-
-    /*@Override
-    public String toString() {
-        // TODO reimplementare facendo una stringa formattata solo con le informazioni
-        // effettivamente disponibili
-        return "";
-    }*/
-
 }
