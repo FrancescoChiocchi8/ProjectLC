@@ -9,6 +9,26 @@ public class AFamily {
     private String husb;
     private String wife;
     private String child;
+    private String dateMarr;
+    private String placeMarr;
+
+    public String getPlaceMarr() {
+        return placeMarr;
+    }
+
+    public void setPlaceMarr(String placeMarr) {
+        this.placeMarr = placeMarr;
+    }
+
+    public String getDateMarr() {
+        return dateMarr;
+    }
+
+    public void setDateMarr(String dateMarr) {
+        this.dateMarr = dateMarr;
+    }
+
+
 
     public AFamily(String codeFamily) {
         this.codeFamily = codeFamily;

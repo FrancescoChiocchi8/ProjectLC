@@ -1,6 +1,9 @@
 package it.unicam.cs.lc.lc2122.project;
-import java.util.*;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Rappresenta un albero genealogico semplificato.

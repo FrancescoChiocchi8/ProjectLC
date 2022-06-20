@@ -25,6 +25,25 @@ public class Individual {
     private Individual father;
     // puntatore alla madre
     private Individual mother;
+    // Per comodità considero le date di nascita e di morte oggetti di tipo String anziché GregorianCalendar.
+    private String birthDate2;
+    private String deathDate2;
+
+    public String getBirthDate2() {
+        return birthDate2;
+    }
+
+    public void setBirthDate2(String birthDate2) {
+        this.birthDate2 = birthDate2;
+    }
+
+    public String getDeathDate2() {
+        return deathDate2;
+    }
+
+    public void setDeathDate2(String deathDate2) {
+        this.deathDate2 = deathDate2;
+    }
 
     /**
      * Create a new individual with a code
@@ -220,27 +239,27 @@ public class Individual {
                 "code='" + code + '\'' +
                 ", givenName='" + getGivenName() + '\'' +
                 ", surname='" + getSurname() + '\'' +
-                //", birthDate=" + birthDate +
+                ", birthDate= " + getBirthDate2() +
                 ", birthPlace='" + getBirthPlace() + '\'' +
-                //", deathDate=" + deathDate +
+                ", deathDate= " + getDeathDate2() +
                 ", deathPlace='" + getDeathPlace() + '\'' +
                 ", buryPlace='" + getBuryPlace() + '\'' +
-                ", childs=" + printChilds() +
-                ", father=" + father.getCode() +
-                ", mother=" + mother.getCode() +
+                ", childs = " + printChilds() +
+                ", father = " + father.getCode() +
+                ", mother = " + mother.getCode() +
                 '}';
         else return "Individual{" +
                 "code='" + code + '\'' +
                 ", givenName='" + getGivenName() + '\'' +
                 ", surname='" + getSurname() + '\'' +
-                //", birthDate=" + birthDate +
+                ", birthDate= " + getBirthDate2() +
                 ", birthPlace='" + getBirthPlace() + '\'' +
-                //", deathDate=" + deathDate +
+                ", deathDate= " + getDeathDate2() +
                 ", deathPlace='" + getDeathPlace() + '\'' +
                 ", buryPlace='" + getBuryPlace() + '\'' +
-                ", childs=" + printChilds() +
-                ", father=" + father +
-                ", mother=" + mother +
+                ", childs = " + printChilds() +
+                ", father = " + father +
+                ", mother = " + mother +
                 '}';
     }
 }
