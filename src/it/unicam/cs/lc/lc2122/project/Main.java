@@ -18,7 +18,7 @@ public class Main {
         else
             input = CharStreams.fromStream(System.in);*/
         //2 modoo: Leggo il file Gedcom specificato e genero il suo corrispondente albero di parsing
-        GedcomLexer lexer = new GedcomLexer(CharStreams.fromFileName("Sample.ged"));
+        GedcomLexer lexer = new GedcomLexer(CharStreams.fromFileName("DragonBall.ged"));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         GedcomParser parser = new GedcomParser(tokens);
         ParseTree tree = parser.gedcom();

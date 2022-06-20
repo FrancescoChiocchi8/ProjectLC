@@ -1,0 +1,128 @@
+0 HEAD
+1 GEDC
+2 VERS 5.5.5
+1 CHAR UTF-8
+1 DATE 20 06 2022
+2 TIME 12:04:56
+1 FILE DragonBall.ged
+1 LANG Italian
+0 @I1@ INDI
+1 NAME Goku /Son/
+2 SURN Son
+2 GIVN Goku
+1 SEX M
+1 BIRT
+2 DATE 1 1 737
+2 PLAC Pianeta Vegeta
+1 FAMS @F1@
+1 FAMC @F3@
+0 @I2@ INDI
+1 NAME Chichi /Son/
+2 SURN Son
+2 GIVN Chichi
+1 SEX F
+1 BIRT
+2 DATE 02 04 737
+2 PLAC Terra
+1 FAMS @F1@
+0 @I3@ INDI
+1 NAME Gohan /Son/
+2 SURN Son
+2 GIVN Gohan
+1 SEX M
+1 BIRT
+2 DATE 15 03 757
+2 PLAC Terra
+1 FAMS @F2@
+1 FAMC @F1@
+0 @I4@ INDI
+1 NAME Videl /Satan/
+2 SURN Satan
+2 GIVN Videl
+1 SEX F
+1 BIRT
+2 DATE 18 09 757
+2 PLAC Terra
+1 FAMS @F2@
+0 @I5@ INDI
+1 NAME Pan /Son/
+2 SURN Son
+2 GIVN Pan
+1 SEX F
+1 BIRT
+2 DATE 20 08 779
+2 PLAC Terra
+1 FAMC @F2@
+0 @I6@ INDI
+1 NAME Vegeta /IV/
+2 SURN IV
+2 GIVN Vegeta
+1 SEX M
+1 BIRT
+2 DATE 16 04 732
+2 PLAC Pianeta Vegeta
+1 FAMC @F4@
+1 FAMS @F5@
+0 @I6@ INDI
+1 NAME Radish /Son/
+2 SURN Son
+2 GIVN Radish
+1 SEX M
+1 FAMC @F3@
+0 @I7@ INDI
+1 NAME Bardack /Son/
+2 SURN Son
+2 GIVN Bardack
+1 SEX M
+1 FAMS @F3@
+0 @I8@ INDI
+1 NAME Gine /Son/
+2 SURN Son
+2 GIVN Gine
+1 SEX F
+1 FAMS @F3@
+0 @I9@ INDI
+1 NAME Re /Vegeta/
+2 SURN Vegeta
+2 GIVN Re
+1 SEX M
+1 FAMS @F4@
+0 @I10@ INDI
+1 NAME Bulma
+2 GIVN Bulma
+1 SEX F
+1 FAMS @F5@
+0 @I11@ INDI
+1 NAME Trunks
+2 GIVN Trunks
+1 SEX M
+1 FAMC @F5@
+0 @I12@ INDI
+1 NAME Gothen /Son/
+2 GIVN Gothen
+2 SURN Son
+1 SEX M
+1 FAMC @F1@
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I3@
+1 CHIL @I12@
+0 @F2@ FAM
+1 HUSB @I3@
+1 WIFE @I4@
+1 CHIL @I5@
+0 @F3@ FAM
+1 HUSB @I7@
+1 WIFE @I8@
+1 CHIL @I1@
+0 @F4@ FAM
+1 HUSB @I9@
+1 CHIL @I6@
+0 @F5@ FAM
+1 HUSB @I6@
+1 WIFE @I10@
+1 CHIL @I11@
+0 TRLR
+0 ANCE @I12@
+
