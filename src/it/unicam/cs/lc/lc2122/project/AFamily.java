@@ -28,8 +28,6 @@ public class AFamily {
         this.dateMarr = dateMarr;
     }
 
-
-
     public AFamily(String codeFamily) {
         this.codeFamily = codeFamily;
     }

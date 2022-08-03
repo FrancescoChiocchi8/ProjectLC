@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2d89f17d-d7e9-4e67-a275-94c5b8fa8428" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DragonBall.ged" beforeDir="false" afterPath="$PROJECT_DIR$/DragonBall.ged" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/AFamily.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unicam/cs/lc/lc2122/project/AFamily.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +37,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/fchio/Desktop/Università/3 anno/2 semestre/Linguaggi e Compilatori/ProjectLC",
+    "last_opened_file_path": "C:/Users/fchio/ProjectPA",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
